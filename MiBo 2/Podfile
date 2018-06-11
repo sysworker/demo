@@ -1,0 +1,24 @@
+#xcodeproj "MiBo.xcodeproj"
+project "MiBo.xcodeproj"
+
+#use_frameworks!
+
+platform :ios, '7.1'
+
+target "MiBo" do
+
+pod 'FoundationExtension'
+
+pod 'Reachability'
+
+pod 'AFNetworking'
+
+pod 'YYWebImage'
+
+pod 'TXScrollLabelView'
+
+pod 'GPUImage'
+
+pod 'WeiboSDK'
+
+end

@@ -1,0 +1,40 @@
+//
+//  Prefix.pch
+//  MiBo
+//
+//  Created by Miniwing on 16/8/19.
+//  Copyright © 2016年 didown. All rights reserved.
+//
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppDelegate.h"
+#import "MainTableViewController.h"
+#import "SDDemoItemView.h"
+
+#import "EWPButton.h"
+#import "EWPScrollLable.h"
+#import "RXLSideSlipViewController.h"
+#import "SideslipRightViewController.h"
+#import "SideslipViewController.h"
+#import "DDMenuController.h"
+
+#import "Reachability.h"
+#import "AFNetworking.h"
+#import "YYWebImage.h"
+#import "MacroMethod.h"
+#import "IdeaDebug.h"
+#import "WeiboSDK.h"
+
+#import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+//#import <YYKit/YYKit.h>
+
+//MJRefresh 上拉加载，上拉刷新
+//ALAssetsLibrary+CustomPhotoAlbum对保存视频的封装也是非常好的
+
+#endif /* Prefix_pch */
