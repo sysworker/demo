@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D9BBF5F20D21B080058F31E /* sendEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF5E20D21B080058F31E /* sendEmail.m */; };
+		1D9BBF6D20D21B4F0058F31E /* SKPSMTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF6420D21B4E0058F31E /* SKPSMTPMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1D9BBF6E20D21B4F0058F31E /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF6720D21B4E0058F31E /* NSData+Base64Additions.m */; };
+		1D9BBF6F20D21B4F0058F31E /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF6820D21B4E0058F31E /* Base64Transcoder.m */; };
+		1D9BBF7020D21B4F0058F31E /* NSStream+SKPSMTPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF6A20D21B4E0058F31E /* NSStream+SKPSMTPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1D9BBF7120D21B4F0058F31E /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9BBF6B20D21B4E0058F31E /* HSK_CFUtilities.m */; };
 		3F0DF91B1DDC20ED0068AB2B /* IdeaLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0DF91A1DDC20ED0068AB2B /* IdeaLog.m */; };
 		3F1A23111DE4020C00373045 /* UIViewController+RXLSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A230D1DE4020C00373045 /* UIViewController+RXLSideMenu.m */; };
 		3F1A23121DE4020C00373045 /* RXLSideSlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A230F1DE4020C00373045 /* RXLSideSlipViewController.m */; };
@@ -77,6 +83,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D9BBF5D20D21B070058F31E /* sendEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendEmail.h; sourceTree = "<group>"; };
+		1D9BBF5E20D21B080058F31E /* sendEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendEmail.m; sourceTree = "<group>"; };
+		1D9BBF6320D21B4D0058F31E /* NSStream+SKPSMTPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSStream+SKPSMTPExtensions.h"; path = "SMTPLibrary/NSStream+SKPSMTPExtensions.h"; sourceTree = "<group>"; };
+		1D9BBF6420D21B4E0058F31E /* SKPSMTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKPSMTPMessage.m; path = SMTPLibrary/SKPSMTPMessage.m; sourceTree = "<group>"; };
+		1D9BBF6520D21B4E0058F31E /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64Additions.h"; path = "SMTPLibrary/NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		1D9BBF6620D21B4E0058F31E /* SKPSMTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKPSMTPMessage.h; path = SMTPLibrary/SKPSMTPMessage.h; sourceTree = "<group>"; };
+		1D9BBF6720D21B4E0058F31E /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64Additions.m"; path = "SMTPLibrary/NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		1D9BBF6820D21B4E0058F31E /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Base64Transcoder.m; path = SMTPLibrary/Base64Transcoder.m; sourceTree = "<group>"; };
+		1D9BBF6920D21B4E0058F31E /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSK_CFUtilities.h; path = SMTPLibrary/HSK_CFUtilities.h; sourceTree = "<group>"; };
+		1D9BBF6A20D21B4E0058F31E /* NSStream+SKPSMTPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSStream+SKPSMTPExtensions.m"; path = "SMTPLibrary/NSStream+SKPSMTPExtensions.m"; sourceTree = "<group>"; };
+		1D9BBF6B20D21B4E0058F31E /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSK_CFUtilities.m; path = SMTPLibrary/HSK_CFUtilities.m; sourceTree = "<group>"; };
+		1D9BBF6C20D21B4F0058F31E /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = SMTPLibrary/Base64Transcoder.h; sourceTree = "<group>"; };
 		3F0DF9171DDC20ED0068AB2B /* IdeaDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaDebug.h; sourceTree = "<group>"; };
 		3F0DF9181DDC20ED0068AB2B /* IdeaDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaDef.h; sourceTree = "<group>"; };
 		3F0DF9191DDC20ED0068AB2B /* IdeaLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaLog.h; sourceTree = "<group>"; };
@@ -209,6 +227,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D9BBF6020D21B1E0058F31E /* SMTPLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				1D9BBF6C20D21B4F0058F31E /* Base64Transcoder.h */,
+				1D9BBF6820D21B4E0058F31E /* Base64Transcoder.m */,
+				1D9BBF6920D21B4E0058F31E /* HSK_CFUtilities.h */,
+				1D9BBF6B20D21B4E0058F31E /* HSK_CFUtilities.m */,
+				1D9BBF6520D21B4E0058F31E /* NSData+Base64Additions.h */,
+				1D9BBF6720D21B4E0058F31E /* NSData+Base64Additions.m */,
+				1D9BBF6320D21B4D0058F31E /* NSStream+SKPSMTPExtensions.h */,
+				1D9BBF6A20D21B4E0058F31E /* NSStream+SKPSMTPExtensions.m */,
+				1D9BBF6620D21B4E0058F31E /* SKPSMTPMessage.h */,
+				1D9BBF6420D21B4E0058F31E /* SKPSMTPMessage.m */,
+			);
+			name = SMTPLibrary;
+			sourceTree = "<group>";
+		};
+		1DB9D75220D10180009D49EC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		1DB9D75320D1018F009D49EC /* SendEmail */ = {
+			isa = PBXGroup;
+			children = (
+				1D9BBF6020D21B1E0058F31E /* SMTPLibrary */,
+				1D9BBF5D20D21B070058F31E /* sendEmail.h */,
+				1D9BBF5E20D21B080058F31E /* sendEmail.m */,
+			);
+			name = SendEmail;
+			sourceTree = "<group>";
+		};
 		3F1A23061DE401CD00373045 /* RXLSideSlip */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +564,8 @@
 		3FEED7351D792626005314DA /* MiBo3rd */ = {
 			isa = PBXGroup;
 			children = (
+				1DB9D75320D1018F009D49EC /* SendEmail */,
+				1DB9D75220D10180009D49EC /* New Group */,
 				3F1A231A1DE40DB100373045 /* DDMenu */,
 				3F1A23061DE401CD00373045 /* RXLSideSlip */,
 				3F65180C1DE2D840007211CB /* EWPScrollLable */,
@@ -629,7 +683,7 @@
 				TargetAttributes = {
 					3F5159B11D66E0A2007A66D5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XQTCWTMP2B;
+						DevelopmentTeam = 4GPDLP6DKN;
 						ProvisioningStyle = Automatic;
 					};
 					3F5159CA1D66E0A3007A66D5 = {
@@ -764,13 +818,17 @@
 				3F5A031F1D815B81008F5621 /* MainTableViewCell.m in Sources */,
 				3F5159BA1D66E0A2007A66D5 /* AppDelegate.m in Sources */,
 				3F1A23151DE4035600373045 /* SideslipViewController.m in Sources */,
+				1D9BBF6D20D21B4F0058F31E /* SKPSMTPMessage.m in Sources */,
 				3FC5D5851DC0CA2A00BA9DF5 /* LKActionSheetView.m in Sources */,
+				1D9BBF7120D21B4F0058F31E /* HSK_CFUtilities.m in Sources */,
 				3FC5D5DD1DC1ABB000BA9DF5 /* UIResponder+LKNotification.m in Sources */,
 				3FC5D5DF1DC1ABB000BA9DF5 /* LKNotificationBar.m in Sources */,
 				3FC5D5C21DC1AB4D00BA9DF5 /* UIResponder+LKBubble.m in Sources */,
 				3F1A231D1DE40DBC00373045 /* DDMenuController.m in Sources */,
 				3FC5D5861DC0CA2A00BA9DF5 /* LKActionLineView.m in Sources */,
 				3F0DF91B1DDC20ED0068AB2B /* IdeaLog.m in Sources */,
+				1D9BBF5F20D21B080058F31E /* sendEmail.m in Sources */,
+				1D9BBF7020D21B4F0058F31E /* NSStream+SKPSMTPExtensions.m in Sources */,
 				3FC5D5C41DC1AB4D00BA9DF5 /* LKBubbleInfo.m in Sources */,
 				3FC5D55A1DC0B9FE00BA9DF5 /* SDPieLoopProgressView.m in Sources */,
 				3F5159B71D66E0A2007A66D5 /* main.m in Sources */,
@@ -779,10 +837,12 @@
 				3F65180B1DE2D83A007211CB /* EWPButton.m in Sources */,
 				3F1A23191DE4038F00373045 /* SideslipRightViewController.m in Sources */,
 				3FC5D5DE1DC1ABB000BA9DF5 /* LKNotificationManager.m in Sources */,
+				1D9BBF6F20D21B4F0058F31E /* Base64Transcoder.m in Sources */,
 				3FC5D5C31DC1AB4D00BA9DF5 /* LKBubbleView.m in Sources */,
 				3FC5D54F1DC0B8E900BA9DF5 /* StarLiveRoomViewController.m in Sources */,
 				3FA11E001D94C4610072C521 /* SDDemoItemView.m in Sources */,
 				3F5A03191D815B5F008F5621 /* LiveRoomTableViewCell.m in Sources */,
+				1D9BBF6E20D21B4F0058F31E /* NSData+Base64Additions.m in Sources */,
 				3F1A23111DE4020C00373045 /* UIViewController+RXLSideMenu.m in Sources */,
 				3F6518151DE2E12C007211CB /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				3F6518121DE2D85D007211CB /* CommonFuction.m in Sources */,
@@ -930,12 +990,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XQTCWTMP2B;
+				DEVELOPMENT_TEAM = 4GPDLP6DKN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Prefix.pch";
 				INFOPLIST_FILE = MiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjrb.tzy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -949,12 +1009,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XQTCWTMP2B;
+				DEVELOPMENT_TEAM = 4GPDLP6DKN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Prefix.pch";
 				INFOPLIST_FILE = MiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjrb.tzy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

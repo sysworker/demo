@@ -14,8 +14,9 @@
 #import "SDPieLoopProgressView.h"
 #import "SDBallProgressView.h"
 #import "TXScrollLabelView.h"
+#import "sendEmail.h"
 
-@interface ViewController ()
+@interface ViewController ()<sendEmailDelegate>
 @property (nonatomic, strong) NSMutableArray *demoViews;
 @property (nonatomic, strong)    TXScrollLabelView       * scrollLabel;
 
@@ -35,7 +36,8 @@
    [super viewDidLoad];
    // Do any additional setup after loading the view, typically from a nib.
    
-   
+    NSSetUncaughtExceptionHandler (&UncaughtExceptionHandler);
+
    UIBarButtonItem *backbutton = [[UIBarButtonItem alloc]init];
    backbutton.title = @"返回自定义";
    self.navigationItem.backBarButtonItem = backbutton;
@@ -107,7 +109,30 @@
                                                 name:[MainTableViewController SAVE_PHOTP]
                                               object:nil];
    
+    // 发送崩溃日志
+    
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    NSString *dataPath = [path stringByAppendingPathComponent:@"AppLog/log.txt"];
+    
+    NSData *data = [NSData dataWithContentsOfFile:dataPath];
+    
+    if (data != nil) {
+        sendEmail * send = [[sendEmail alloc] init];
+        send.delegate = self;
+        send.titleEmail = @"新的bug邮件";
+        send.contentStr = @"这是默认的内容";
+        send.ccEmail = @"1005573473@qq.com";
+        //路径要放最后，设置路径后即代表发送邮件
+        send.logPath = dataPath;
+        
+    }
+    
+}
 
+-(void)sendEmailBack:(BOOL)state message:(NSString *)messageStr
+{
+    NSLog(@"当前的异常------%@",messageStr);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -396,5 +421,67 @@
    return randomImageName;
 }
 
+#pragma mark - 收集崩溃信息（11-3王博文）
+void UncaughtExceptionHandler(NSException *aException)
+{
+    /*需要记录错误原因,并且返回到服务器
+     1,知道设备版本
+     2,崩溃日期*/
+    //设备类型 iPhone/iPhone6/iPhone6 Plus/iPad......
+    
+    // 异常的堆栈信息
+    NSArray * stackArray = [aException callStackSymbols];
+    // 出现异常的原因
+    NSString * reason = [aException reason];
+    // 异常名称
+    NSString * name = [aException name];
+    //设备版本
+    NSString * version=[[UIDevice currentDevice]systemVersion];
+    // 手机名称
+    NSString * model=[[UIDevice currentDevice]model];
+    // 崩溃时间
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString * dateTime = [formatter stringFromDate:[NSDate date]];
+    
+    //获取项目名称
+    NSString * executableFile = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleExecutableKey];
+    
+    // app版本
+    
+    NSString *app_Version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    NSString *app_build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    
+    NSString *exceptionInfo = [NSString stringWithFormat:@"Exception reason（手机名称)：%@\n\nException reason（崩溃原因)：%@\n\nException name（崩溃名字)：%@\n\nxception name（崩溃时间)：%@\n\nException version（崩溃系统版本)：%@\n\nException reason（项目名称)：%@\n\nException reason（项目版本)：%@\n\nException reason（项目渠道版本)：%@\n\nException stack（堆栈信息)：%@",model,name, reason,dateTime,version,executableFile,app_Version,app_build,stackArray];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *iOSDirectory = [documentsPath stringByAppendingPathComponent:@"AppLog"];
+    BOOL isSuccess = [fileManager createDirectoryAtPath:iOSDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    if (isSuccess) {
+        NSLog(@"success");
+        NSString *iOSPath = [iOSDirectory stringByAppendingPathComponent:@"log.txt"];
+        BOOL isSuccess = [fileManager createFileAtPath:iOSPath contents:nil attributes:nil];
+        if (isSuccess) {
+            BOOL isSuccess = [exceptionInfo writeToFile:iOSPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            if (isSuccess) {
+                NSLog(@"崩溃日志缓存成功");
+            }
+        }
+    } else {
+        NSLog(@"fail");
+    }
+    
+    //    NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"AppLog/eror.log"];
+    //    NSFileManager *fileManager =[NSFileManager defaultManager];
+    //    [fileManager createFileAtPath:path contents:[exceptionInfo dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    
+    //    [exceptionInfo writeToFile:[NSString stringWithFormat:@"%@/Documents/Log/eror.log",NSHomeDirectory()] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    return;
+}
 
 @end
